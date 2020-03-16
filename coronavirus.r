@@ -15,25 +15,27 @@ text2 <- lapply(text, function(x) {
     the_date = str_extract(web_text, "\\d{1,2}\\s(January|February|March|April|May|June|July|August|September|October|November|December)\\s2020")
     
     the_numbers <- str_match_all(web_text, "\\d{1,3}(,\\d{3})?(,\\d{3})?")
+    print(the_numbers)
 
     num_row <- the_numbers[[1]][,1]
     length_the_number = length(num_row)
-    positive <- str_replace(num_row[length_the_number - 1], ",", "")
-    negative <- str_replace(num_row[length_the_number - 2], ",", "")
-    num_tests <- str_replace(num_row[length_the_number - 3], ",", "")
+    dead <- str_replace(num_row[length_the_number - 1], ",", "")
+    positive <- str_replace(num_row[length_the_number - 2], ",", "")
+    negative <- str_replace(num_row[length_the_number - 3], ",", "")
+    num_tests <- str_replace(num_row[length_the_number - 4], ",", "")
     
-    new_row <- c(the_date, num_tests, negative, positive)
+    new_row <- c(the_date, num_tests, negative, positive, dead)
     return(new_row)
   }
 })
 
 text3 <- unlist(text2)
-start_df <- data.frame(report_date = text3[1], tests = text3[2], negative=text3[3], positive=text3[4], deaths = "", stringsAsFactors = F)
+start_df <- data.frame(report_date = text3[1], tests = text3[2], negative=text3[3], positive=text3[4], deaths = text3[5], stringsAsFactors = F)
 
-tab <- h %>% html_nodes("table")
-tab <- tab[[1]] %>% html_table
-pivot_tab <- pivot_wider(tab, names_from = `NHS region`, values_from = Cases)
+#tab <- h %>% html_nodes("table")
+#tab <- tab[[1]] %>% html_table
+#pivot_tab <- pivot_wider(tab, names_from = `NHS region`, values_from = Cases)
 
-final_row <- bind_cols(start_df, pivot_tab)
+#final_row <- bind_cols(start_df, pivot_tab)
 
-write_csv(final_row, "coronavirus-data.csv", append = T)
+write_csv(start_df, "coronavirus-data.csv", append = T)
