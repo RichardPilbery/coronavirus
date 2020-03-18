@@ -19,10 +19,10 @@ text2 <- lapply(text, function(x) {
 
     num_row <- the_numbers[[1]][,1]
     length_the_number = length(num_row)
-    dead <- str_replace(num_row[length_the_number - 1], ",", "")
-    positive <- str_replace(num_row[length_the_number - 2], ",", "")
-    negative <- str_replace(num_row[length_the_number - 3], ",", "")
-    num_tests <- str_replace(num_row[length_the_number - 4], ",", "")
+    dead <- str_replace(num_row[1], ",", "")
+    positive <- str_replace(num_row[7], ",", "")
+    negative <- str_replace(num_row[6], ",", "")
+    num_tests <- str_replace(num_row[5], ",", "")
     
     new_row <- c(the_date, num_tests, negative, positive, dead)
     return(new_row)
