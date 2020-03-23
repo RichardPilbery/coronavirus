@@ -1,10 +1,11 @@
-// scrapes a given url (for https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases)
+// scrapes a given url 
+// Script stolen from: https://www.robert-hickman.eu/post/dynamic_web_scraping/
 
 // create a webpage object
 var page = require('webpage').create(),
   system = require('system')
 
-// the url for each country provided as an argument
+// the url provided as an argument
  address = system.args[1];
 // address = "https://www.arcgis.com/apps/opsdashboard/index.html#/f94c3c90da5b4e9f9a0b19484dd4bb14";
 
@@ -25,6 +26,6 @@ page.open(address, function (status) {
            var content = page.content;
            fs.write(path,content,'w');
            phantom.exit();
-        }, 5000); // Change timeout as required to allow sufficient time 
+        }, 5000);
     }
 });
