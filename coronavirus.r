@@ -10,7 +10,7 @@ text <- h %>% html_nodes("p")
 text2 <- lapply(text, function(x) {
   web_text <- as.character(html_text(x))
   if(str_sub(web_text, 0, 5) == "As of") {
-    #print("Matched")
+    print("Matched")
     #print(web_text)
     the_date = str_extract(web_text, "\\d{1,2}\\s(January|February|March|April|May|June|July|August|September|October|November|December)\\s2020")
     
@@ -30,7 +30,7 @@ text2 <- lapply(text, function(x) {
 })
 
 text3 <- unlist(text2)
-start_df <- data.frame(report_date = text3[1], tests = text3[2], negative=text3[3], positive=text3[4], deaths = text3[5], stringsAsFactors = F)
+start_df <- data.frame(report_date = text3[1], tests = text3[2], negative=text3[3], positive=text3[4], deaths = str_replace(text3[7], ",", ""), stringsAsFactors = F)
 
 #tab <- h %>% html_nodes("table")
 #tab <- tab[[1]] %>% html_table
