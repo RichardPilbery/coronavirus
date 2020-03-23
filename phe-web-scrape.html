@@ -1,0 +1,2058 @@
+<!DOCTYPE html><html dir="ltr" class="en-gb en dj_webkit dj_contentbox"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>COVID-19 Dashboard</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="icon" href="assets/images/favicon.ico?" type="image/x-icon">
+
+
+  <link href="https://js.arcgis.com/3.31/dijit/themes/claro/claro.css" rel="stylesheet" type="text/css">
+  <link href="https://js.arcgis.com/3.31/esri/css/esri.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="assets/vendor-36211ead39d5c1e27a4b693f05e3f1af.css">
+  <link rel="stylesheet" href="assets/app-light-a4ce40813167ba31a775b2184a79f86e.css">
+
+
+<style>.cke{visibility:hidden;}</style></head>
+
+<body class="claro ember-application">
+  <script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/nls/jsapi_en-gb.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/dijit/ColorPicker.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/dijit/ColorPicker/HexPalette.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dijit/form/DateTextBox.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dijit/form/TimeTextBox.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dojox/color.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/dijit/Legend.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/dijit/Scalebar.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/dijit/BasemapGallery.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/dijit/LayerList.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/dijit/Search.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/tasks/locator.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/toolbars/draw.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/plugins/FeatureLayerStatistics.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/geometry/geometryEngineAsync.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/geometry/geometryEngine.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dojo/fx/easing.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/arcgis/Portal.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/styles/colors.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/moment/locale/en-gb.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dojox/gfx/svg.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/dijit/_Tooltip.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/dijit/ColorPicker/colorUtil.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/dijit/HorizontalSlider.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dijit/form/RadioButton.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dijit/Calendar.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dijit/form/_DateTimeTextBox.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dojox/color/_base.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dijit/_TimePicker.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/styles/basic.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/tasks/AddressCandidate.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/toolbars/_toolbar.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/tasks/GenerateRendererTask.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/tasks/UniqueValueDefinition.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/tasks/ClassBreaksDefinition.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/tasks/GenerateRendererParameters.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/tasks/generateRenderer.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/tasks/ProjectParameters.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/workers/heatmapCalculator.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/workers/WorkerClient.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dojox/gfx/filters.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dojox/gfx/svgext.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dijit/form/HorizontalRuleLabels.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dijit/form/HorizontalSlider.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dijit/form/CheckBox.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dijit/form/_RadioButtonMixin.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dijit/CalendarLite.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dijit/form/RangeBoundTextBox.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dojox/main.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dojo/colors.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dijit/form/_ListMouseMixin.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/esri/tasks/ClassificationDefinition.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dijit/form/HorizontalRule.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dojo/dnd/move.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dijit/form/_CheckBoxMixin.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dojo/selector/lite.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dijit/form/MappedTextBox.js"></script><script type="text/javascript" charset="utf-8" src="https://js.arcgis.com/3.31/dijit/form/_ListBase.js"></script><script type="text/javascript" charset="utf-8" src="assets/vendor-b294ef434e8ecd8fc0671169898118d0.js"></script><script type="text/javascript" charset="utf-8" src="assets/nickel-3a9fdff2fead41c28df9eeaf949f145b.js"></script><script type="text/javascript" charset="utf-8" src="assets/moment-timezone-with-data.min-f71eb5eba513b3ab182b567941a82ef5.js"></script><script>
+    window.dojoConfig = {
+      async: true
+    };
+
+    var cookieName = 'esri_auth';
+
+    var browserCulture = navigator.languages ? navigator.languages[0] : navigator.language || navigator.userLanguage;
+    var culture = browserCulture && browserCulture.toLowerCase() || 'en';
+    var _rtl = false;
+
+    var cookie = JSON.parse(decodeURIComponent(document.cookie.replace(new RegExp('(?:(?:^|.*;\\s*)' + cookieName + '\\s*\\=\\s*([^;]*).*$)|^.*$'), '$1')) || null);
+    if (cookie && cookie.culture) {
+      culture = cookie.culture.toLowerCase();
+    }
+
+    var queryParams = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for (var i = 0; i < queryParams.length; i++) {
+      var queryParam = queryParams[i].split('=');
+      if (queryParam[0] === 'locale' && queryParam[1]) {
+        culture = queryParam[1].toLowerCase();
+      }
+      if (queryParam[0] === '_rtl' && queryParam[1] === 'true') {
+        _rtl = true;
+      }
+    }
+
+    var isRTL = culture.toLowerCase() === 'ar' || culture.toLowerCase() === 'he' || _rtl;
+
+    window.dojoConfig.locale = culture;
+    window.dojoConfig.isRTL = isRTL;
+
+    var dirNode = document.querySelector('html');
+    dirNode.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+    dirNode.className += ' ' + culture;
+    dirNode.className += culture.indexOf('-') !== -1 ? ' ' + culture.split('-')[0] : '';
+
+    window.CKEDITOR_BASEPATH = window.location.pathname.replace('index.html', '') + 'assets/ckeditor/';
+  </script>
+  <script src="https://js.arcgis.com/3.31/init.js" data-amd="true"></script>
+  <script>
+    require([
+      'esri/request', 'esri/moment', 'dojo/_base/config', 'dojo/Deferred', 'esri/dijit/ColorPicker', 'dojo/promise/all', 'esri/tasks/query', 'dojo/_base/Color', 'dojo/io-query', 'esri/IdentityManager', 'dojo/i18n!dojo/cldr/nls/gregorian', 'esri/dijit/ColorPicker/HexPalette', 'dijit/form/DateTextBox', 'dijit/form/TimeTextBox', 'dojo/number', 'dojox/color', 'esri/dijit/Legend', 'dojo/dom-geometry', 'dojox/gfx', 'esri/symbols/jsonUtils', 'esri/dijit/Scalebar', 'dojo/on', 'esri/dijit/BasemapGallery', 'esri/geometry/Extent', 'esri/arcgis/utils', 'esri/dijit/LayerList', 'esri/dijit/Search', 'esri/tasks/locator', 'esri/symbols/SimpleMarkerSymbol', 'esri/Color', 'esri/toolbars/draw', 'esri/graphic', 'esri/symbols/PictureMarkerSymbol', 'esri/symbols/SimpleLineSymbol', 'esri/symbols/SimpleFillSymbol', 'esri/geometry/ScreenPoint', 'dojo/date/locale', 'esri/geometry/Point', 'esri/SpatialReference', 'esri/dijit/PopupTemplate', 'esri/plugins/FeatureLayerStatistics', 'esri/tasks/QueryTask', 'esri/geometry/geometryEngineAsync', 'esri/geometry/jsonUtils', 'esri/layers/FeatureLayer', 'dojo/_base/lang', 'esri/geometry/geometryEngine', 'esri/layers/GridLayout', 'esri/renderers/jsonUtils', 'dojo/_base/fx', 'dojo/fx/easing', 'esri/renderers/UniqueValueRenderer', 'esri/renderers/SimpleRenderer', 'esri/layers/GraphicsLayer', 'esri/config', 'esri/geometry/scaleUtils', 'esri/tasks/StatisticDefinition', 'esri/arcgis/OAuthInfo', 'esri/arcgis/Portal', 'esri/tasks/GeometryService', 'dojo/_base/Deferred', 'dojo/json', 'dojo/cookie', 'esri/styles/colors', 'esri/lang', 'esri/geometry/webMercatorUtils'
+    ], function(mod0, mod1, mod2, mod3, mod4, mod5, mod6, mod7, mod8, mod9, mod10, mod11, mod12, mod13, mod14, mod15, mod16, mod17, mod18, mod19, mod20, mod21, mod22, mod23, mod24, mod25, mod26, mod27, mod28, mod29, mod30, mod31, mod32, mod33, mod34, mod35, mod36, mod37, mod38, mod39, mod40, mod41, mod42, mod43, mod44, mod45, mod46, mod47, mod48, mod49, mod50, mod51, mod52, mod53, mod54, mod55, mod56, mod57, mod58, mod59, mod60, mod61, mod62, mod63, mod64, mod65) {
+      var adoptables = [{
+        name: 'esri/request',
+        obj: mod0
+      }, {
+        name: 'esri/moment',
+        obj: mod1
+      }, {
+        name: 'dojo/_base/config',
+        obj: mod2
+      }, {
+        name: 'dojo/Deferred',
+        obj: mod3
+      }, {
+        name: 'esri/dijit/ColorPicker',
+        obj: mod4
+      }, {
+        name: 'dojo/promise/all',
+        obj: mod5
+      }, {
+        name: 'esri/tasks/query',
+        obj: mod6
+      }, {
+        name: 'dojo/_base/Color',
+        obj: mod7
+      }, {
+        name: 'dojo/io-query',
+        obj: mod8
+      }, {
+        name: 'esri/IdentityManager',
+        obj: mod9
+      }, {
+        name: 'dojo/i18n!dojo/cldr/nls/gregorian',
+        obj: mod10
+      }, {
+        name: 'esri/dijit/ColorPicker/HexPalette',
+        obj: mod11
+      }, {
+        name: 'dijit/form/DateTextBox',
+        obj: mod12
+      }, {
+        name: 'dijit/form/TimeTextBox',
+        obj: mod13
+      }, {
+        name: 'dojo/number',
+        obj: mod14
+      }, {
+        name: 'dojox/color',
+        obj: mod15
+      }, {
+        name: 'esri/dijit/Legend',
+        obj: mod16
+      }, {
+        name: 'dojo/dom-geometry',
+        obj: mod17
+      }, {
+        name: 'dojox/gfx',
+        obj: mod18
+      }, {
+        name: 'esri/symbols/jsonUtils',
+        obj: mod19
+      }, {
+        name: 'esri/dijit/Scalebar',
+        obj: mod20
+      }, {
+        name: 'dojo/on',
+        obj: mod21
+      }, {
+        name: 'esri/dijit/BasemapGallery',
+        obj: mod22
+      }, {
+        name: 'esri/geometry/Extent',
+        obj: mod23
+      }, {
+        name: 'esri/arcgis/utils',
+        obj: mod24
+      }, {
+        name: 'esri/dijit/LayerList',
+        obj: mod25
+      }, {
+        name: 'esri/dijit/Search',
+        obj: mod26
+      }, {
+        name: 'esri/tasks/locator',
+        obj: mod27
+      }, {
+        name: 'esri/symbols/SimpleMarkerSymbol',
+        obj: mod28
+      }, {
+        name: 'esri/Color',
+        obj: mod29
+      }, {
+        name: 'esri/toolbars/draw',
+        obj: mod30
+      }, {
+        name: 'esri/graphic',
+        obj: mod31
+      }, {
+        name: 'esri/symbols/PictureMarkerSymbol',
+        obj: mod32
+      }, {
+        name: 'esri/symbols/SimpleLineSymbol',
+        obj: mod33
+      }, {
+        name: 'esri/symbols/SimpleFillSymbol',
+        obj: mod34
+      }, {
+        name: 'esri/geometry/ScreenPoint',
+        obj: mod35
+      }, {
+        name: 'dojo/date/locale',
+        obj: mod36
+      }, {
+        name: 'esri/geometry/Point',
+        obj: mod37
+      }, {
+        name: 'esri/SpatialReference',
+        obj: mod38
+      }, {
+        name: 'esri/dijit/PopupTemplate',
+        obj: mod39
+      }, {
+        name: 'esri/plugins/FeatureLayerStatistics',
+        obj: mod40
+      }, {
+        name: 'esri/tasks/QueryTask',
+        obj: mod41
+      }, {
+        name: 'esri/geometry/geometryEngineAsync',
+        obj: mod42
+      }, {
+        name: 'esri/geometry/jsonUtils',
+        obj: mod43
+      }, {
+        name: 'esri/layers/FeatureLayer',
+        obj: mod44
+      }, {
+        name: 'dojo/_base/lang',
+        obj: mod45
+      }, {
+        name: 'esri/geometry/geometryEngine',
+        obj: mod46
+      }, {
+        name: 'esri/layers/GridLayout',
+        obj: mod47
+      }, {
+        name: 'esri/renderers/jsonUtils',
+        obj: mod48
+      }, {
+        name: 'dojo/_base/fx',
+        obj: mod49
+      }, {
+        name: 'dojo/fx/easing',
+        obj: mod50
+      }, {
+        name: 'esri/renderers/UniqueValueRenderer',
+        obj: mod51
+      }, {
+        name: 'esri/renderers/SimpleRenderer',
+        obj: mod52
+      }, {
+        name: 'esri/layers/GraphicsLayer',
+        obj: mod53
+      }, {
+        name: 'esri/config',
+        obj: mod54
+      }, {
+        name: 'esri/geometry/scaleUtils',
+        obj: mod55
+      }, {
+        name: 'esri/tasks/StatisticDefinition',
+        obj: mod56
+      }, {
+        name: 'esri/arcgis/OAuthInfo',
+        obj: mod57
+      }, {
+        name: 'esri/arcgis/Portal',
+        obj: mod58
+      }, {
+        name: 'esri/tasks/GeometryService',
+        obj: mod59
+      }, {
+        name: 'dojo/_base/Deferred',
+        obj: mod60
+      }, {
+        name: 'dojo/json',
+        obj: mod61
+      }, {
+        name: 'dojo/cookie',
+        obj: mod62
+      }, {
+        name: 'esri/styles/colors',
+        obj: mod63
+      }, {
+        name: 'esri/lang',
+        obj: mod64
+      }, {
+        name: 'esri/geometry/webMercatorUtils',
+        obj: mod65
+      }];
+      var isVendor = new RegExp('vendor(.*js)');
+
+      function recursiveRequire(i, scripts) {
+        if (i >= scripts.length) {
+          return;
+        }
+        require([scripts[i]], function() {
+          if (isVendor.test(scripts[i])) {
+            adoptables.forEach(function(adoptable) {
+              enifed(adoptable.name, [], function() {
+                return adoptable.obj;
+              });
+            });
+          }
+          recursiveRequire(++i, scripts);
+        });
+      }
+      recursiveRequire(0, ["assets/vendor-b294ef434e8ecd8fc0671169898118d0.js", "assets/nickel-3a9fdff2fead41c28df9eeaf949f145b.js", "assets/moment-timezone-with-data.min-f71eb5eba513b3ab182b567941a82ef5.js"]);
+    });
+  </script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!---->
+<div id="ember6" class="dashboard-page flex-vertical full panel panel-no-border panel-no-padding position-relative ember-view">  
+<!---->
+<!---->
+
+  
+<!---->
+<div style="background-color:#ffffff;color:#0b0c0c;" id="ember8" class="flex-fluid flex-vertical overflow-hidden dashboard-container ember-view">
+<!---->
+      <div class="flex-fluid flex-horizontal position-relative overflow-hidden">
+
+<!---->
+
+          <div class="flex-fluid position-relative overflow-hidden">
+            <div class="position-absolute full margin-container">
+<div id="ember9" class="dock-container ember-view"><margin-container class="left top right bottom">
+  <full-container class="layout-reference">
+
+<div style="left:0px;top:0px;width:59.5478374836173px;height:29.75886513126568px;" id="ember10" class="dock-element ember-view"> <margin-container class="left right top bottom" style="border-color: #ffffff;">
+  <full-container>
+                            <div style="color:#0b0c0c;" id="ember11" class="widget flex-vertical full-height rich-text-widget ember-view"><!---->
+<!---->
+<!---->
+
+
+  <div class="external-html panel-padding-quarter widget-body flex-fluid full-width flex-vertical overflow-y-auto overflow-x-hidden">
+        <p><img alt="" src="https://phe.maps.arcgis.com/sharing/rest/content/items/b031bd3ba4744fdc9790ae1338551219/data" style="height:24px; margin-top:10px; width:200px"></p>
+
+
+  </div>
+
+
+
+<!---->
+<!----></div>
+
+
+  </full-container>
+</margin-container>
+</div><div style="left:59.5478374836173px;top:0px;width:330.4521625163827px;height:29.75886513126568px;" id="ember15" class="dock-element ember-view"> <margin-container class="left right top bottom" style="border-color: #ffffff;">
+  <full-container>
+                            <div style="color:#0b0c0c;" id="ember16" class="widget flex-vertical full-height rich-text-widget ember-view"><!---->
+<!---->
+<!---->
+
+
+  <div class="external-html panel-padding-quarter widget-body flex-fluid full-width flex-vertical overflow-y-auto overflow-x-hidden">
+        <p style="font-family:arial; font-size:24px; line-height:1.25"><strong>Total UK COVID-19 Cases Update</strong></p>
+
+<p style="font-family:arial; line-height:1.25">Data as of Sunday 22nd&nbsp;March 2020</p>
+
+
+  </div>
+
+
+
+<!---->
+<!----></div>
+
+
+  </full-container>
+</margin-container>
+</div><div style="left:0px;top:29.75886513126568px;width:36.12035432288534px;height:49.586187644373574px;" id="ember20" class="dock-element ember-view"> <margin-container class="left right top bottom" style="border-color: #ffffff;">
+  <full-container>
+                            <div style="color:#0b0c0c;" id="ember21" class="widget flex-vertical full-height indicator-widget ember-view"><!---->
+  <div class="flex-fix widget-header">
+    <div class="caption">
+      <p style="font-family:arial; line-height:1.25; text-align:center"><strong>Total UK cases</strong></p>
+
+    </div>
+  </div>
+
+<!---->
+
+
+  <div class="flex-justify-center widget-body flex-fluid full-width flex-vertical overflow-y-hidden overflow-x-hidden">
+    
+    <div class="flex-vertical flex-fix allow-shrink">
+      
+<!---->
+        <div style="fill:#0b0c0c" id="ember479" class="flex-fix allow-shrink indicator-center-text responsive-text flex-vertical ember-view"><svg class="responsive-text-group" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="27" width="0">
+  <g class="responsive-text-icon">
+    <!---->
+  </g>
+
+  <g class="responsive-text-label">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <text vector-effect="non-scaling-stroke">5,683</text>
+    </svg>
+  </g>
+</svg></div>
+
+<!---->    </div>
+      
+
+  </div>
+
+
+
+<!---->
+<!----></div>
+
+
+  </full-container>
+</margin-container>
+</div><div style="left:36.12035432288534px;top:29.75886513126568px;width:40.121259323795385px;height:49.586187644373574px;" id="ember27" class="dock-element ember-view"> <margin-container class="left right top bottom" style="border-color: #ffffff;">
+  <full-container>
+                            <div style="color:#0b0c0c;" id="ember28" class="widget flex-vertical full-height indicator-widget ember-view"><!---->
+  <div class="flex-fix widget-header">
+    <div class="caption">
+      <p style="font-family:arial; line-height:1.25; text-align:center"><strong>Daily Confirmed&nbsp;Cases</strong></p>
+
+    </div>
+  </div>
+
+<!---->
+
+
+  <div class="flex-justify-center widget-body flex-fluid full-width flex-vertical overflow-y-hidden overflow-x-hidden">
+    
+    <div class="flex-vertical flex-fix allow-shrink">
+      
+<!---->
+        <div style="fill:#0b0c0c" id="ember481" class="flex-fix allow-shrink indicator-center-text responsive-text flex-vertical ember-view"><svg class="responsive-text-group" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="27" width="0">
+  <g class="responsive-text-icon">
+    <!---->
+  </g>
+
+  <g class="responsive-text-label">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <text vector-effect="non-scaling-stroke">665</text>
+    </svg>
+  </g>
+</svg></div>
+
+<!---->    </div>
+      
+
+  </div>
+
+
+
+<!---->
+<!----></div>
+
+
+  </full-container>
+</margin-container>
+</div><div style="left:76.24161364668073px;top:29.75886513126568px;width:48.13326425723755px;height:49.586187644373574px;" id="ember34" class="dock-element ember-view"> <margin-container class="left right top bottom" style="border-color: #ffffff;">
+  <full-container>
+                            <div style="color:#0b0c0c;" id="ember35" class="widget flex-vertical full-height indicator-widget ember-view"><!---->
+  <div class="flex-fix widget-header">
+    <div class="caption">
+      <p style="font-family:arial; line-height:1.25; text-align:center"><strong>Patients Recovered</strong></p>
+
+    </div>
+  </div>
+
+<!---->
+
+
+  <div class="flex-justify-center widget-body flex-fluid full-width flex-vertical overflow-y-hidden overflow-x-hidden">
+    
+    <div class="flex-vertical flex-fix allow-shrink">
+      
+<!---->
+        <div style="fill:#0b0c0c" id="ember482" class="flex-fix allow-shrink indicator-center-text responsive-text flex-vertical ember-view"><svg class="responsive-text-group" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="27" width="0">
+  <g class="responsive-text-icon">
+    <!---->
+  </g>
+
+  <g class="responsive-text-label">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <text vector-effect="non-scaling-stroke">135</text>
+    </svg>
+  </g>
+</svg></div>
+
+<!---->    </div>
+      
+
+  </div>
+
+
+
+<!---->
+<!----></div>
+
+
+  </full-container>
+</margin-container>
+</div><div style="left:124.37487790391828px;top:29.75886513126568px;width:33.50135465837033px;height:49.586187644373574px;" id="ember41" class="dock-element ember-view"> <margin-container class="left right top bottom" style="border-color: #ffffff;">
+  <full-container>
+                            <div style="color:#0b0c0c;" id="ember42" class="widget flex-vertical full-height indicator-widget ember-view"><!---->
+  <div class="flex-fix widget-header">
+    <div class="caption">
+      <p style="font-family:arial; line-height:1.25; text-align:center"><strong>Total UK deaths</strong></p>
+
+    </div>
+  </div>
+
+<!---->
+
+
+  <div class="flex-justify-center widget-body flex-fluid full-width flex-vertical overflow-y-hidden overflow-x-hidden">
+    
+    <div class="flex-vertical flex-fix allow-shrink">
+      
+<!---->
+        <div style="fill:#0b0c0c" id="ember475" class="flex-fix allow-shrink indicator-center-text responsive-text flex-vertical ember-view"><svg class="responsive-text-group" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="27" width="0">
+  <g class="responsive-text-icon">
+    <!---->
+  </g>
+
+  <g class="responsive-text-label">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <text vector-effect="non-scaling-stroke">281</text>
+    </svg>
+  </g>
+</svg></div>
+
+<!---->    </div>
+      
+
+  </div>
+
+
+
+<!---->
+<!----></div>
+
+
+  </full-container>
+</margin-container>
+</div><div style="left:0px;top:79.34505277563926px;width:35.379921486368715px;height:48.35184813964013px;" id="ember48" class="dock-element ember-view"> <margin-container class="left right top bottom" style="border-color: #ffffff;">
+  <full-container>
+                            <div style="color:#0b0c0c;" id="ember49" class="widget flex-vertical full-height indicator-widget ember-view"><!---->
+  <div class="flex-fix widget-header">
+    <div class="caption">
+      <p style="font-family:arial; line-height:1.25; text-align:center"><strong>England</strong></p>
+
+    </div>
+  </div>
+
+<!---->
+
+
+  <div class="flex-justify-center widget-body flex-fluid full-width flex-vertical overflow-y-hidden overflow-x-hidden">
+    
+    <div class="flex-vertical flex-fix allow-shrink">
+      
+<!---->
+        <div style="fill:#0b0c0c" id="ember478" class="flex-fix allow-shrink indicator-center-text responsive-text flex-vertical ember-view"><svg class="responsive-text-group" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="25" width="0">
+  <g class="responsive-text-icon">
+    <!---->
+  </g>
+
+  <g class="responsive-text-label">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <text vector-effect="non-scaling-stroke">4,792</text>
+    </svg>
+  </g>
+</svg></div>
+
+<!---->    </div>
+      
+
+  </div>
+
+
+
+<!---->
+<!----></div>
+
+
+  </full-container>
+</margin-container>
+</div><div style="left:35.379921486368715px;top:79.34505277563926px;width:40.775559321272944px;height:48.35184813964013px;" id="ember55" class="dock-element ember-view"> <margin-container class="left right top bottom" style="border-color: #ffffff;">
+  <full-container>
+                            <div style="color:#0b0c0c;" id="ember56" class="widget flex-vertical full-height indicator-widget ember-view"><!---->
+  <div class="flex-fix widget-header">
+    <div class="caption">
+      <p style="font-family:arial; line-height:1.25; text-align:center"><strong>Scotland</strong></p>
+
+    </div>
+  </div>
+
+<!---->
+
+
+  <div class="flex-justify-center widget-body flex-fluid full-width flex-vertical overflow-y-hidden overflow-x-hidden">
+    
+    <div class="flex-vertical flex-fix allow-shrink">
+      
+<!---->
+        <div style="fill:#0b0c0c" id="ember480" class="flex-fix allow-shrink indicator-center-text responsive-text flex-vertical ember-view"><svg class="responsive-text-group" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="25" width="0">
+  <g class="responsive-text-icon">
+    <!---->
+  </g>
+
+  <g class="responsive-text-label">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <text vector-effect="non-scaling-stroke">416</text>
+    </svg>
+  </g>
+</svg></div>
+
+<!---->    </div>
+      
+
+  </div>
+
+
+
+<!---->
+<!----></div>
+
+
+  </full-container>
+</margin-container>
+</div><div style="left:76.15548080764167px;top:79.34505277563926px;width:41.896116513709245px;height:48.35184813964013px;" id="ember62" class="dock-element ember-view"> <margin-container class="left right top bottom" style="border-color: #ffffff;">
+  <full-container>
+                            <div style="color:#0b0c0c;" id="ember63" class="widget flex-vertical full-height indicator-widget ember-view"><!---->
+  <div class="flex-fix widget-header">
+    <div class="caption">
+      <p style="font-family:arial; line-height:1.25; text-align:center"><strong>Wales</strong></p>
+
+    </div>
+  </div>
+
+<!---->
+
+
+  <div class="flex-justify-center widget-body flex-fluid full-width flex-vertical overflow-y-hidden overflow-x-hidden">
+    
+    <div class="flex-vertical flex-fix allow-shrink">
+      
+<!---->
+        <div style="fill:#0b0c0c" id="ember476" class="flex-fix allow-shrink indicator-center-text responsive-text flex-vertical ember-view"><svg class="responsive-text-group" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="25" width="0">
+  <g class="responsive-text-icon">
+    <!---->
+  </g>
+
+  <g class="responsive-text-label">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <text vector-effect="non-scaling-stroke">347</text>
+    </svg>
+  </g>
+</svg></div>
+
+<!---->    </div>
+      
+
+  </div>
+
+
+
+<!---->
+<!----></div>
+
+
+  </full-container>
+</margin-container>
+</div><div style="left:118.05159732135091px;top:79.34505277563926px;width:39.82463524093765px;height:48.35184813964013px;" id="ember69" class="dock-element ember-view"> <margin-container class="left right top bottom" style="border-color: #ffffff;">
+  <full-container>
+                            <div style="color:#0b0c0c;" id="ember70" class="widget flex-vertical full-height indicator-widget ember-view"><!---->
+  <div class="flex-fix widget-header">
+    <div class="caption">
+      <p style="font-family:arial; line-height:1.25; text-align:center"><strong>N. Ireland</strong></p>
+
+    </div>
+  </div>
+
+<!---->
+
+
+  <div class="flex-justify-center widget-body flex-fluid full-width flex-vertical overflow-y-hidden overflow-x-hidden">
+    
+    <div class="flex-vertical flex-fix allow-shrink">
+      
+<!---->
+        <div style="fill:#0b0c0c" id="ember477" class="flex-fix allow-shrink indicator-center-text responsive-text flex-vertical ember-view"><svg class="responsive-text-group" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="25" width="0">
+  <g class="responsive-text-icon">
+    <!---->
+  </g>
+
+  <g class="responsive-text-label">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <text vector-effect="non-scaling-stroke">128</text>
+    </svg>
+  </g>
+</svg></div>
+
+<!---->    </div>
+      
+
+  </div>
+
+
+
+<!---->
+<!----></div>
+
+
+  </full-container>
+</margin-container>
+</div><div style="left:0px;top:127.69690091527939px;width:157.87623256228858px;height:63.92031230096727px;" id="ember76" class="dock-element ember-view"> <margin-container class="left right top bottom" style="border-color: #ffffff;">
+  <full-container>
+                            <div style="color:#0b0c0c;" id="ember77" class="widget flex-vertical full-height chart-widget serial-chart-widget ember-view"><!---->
+  <div class="flex-fix widget-header">
+    <div class="caption">
+      <p style="font-family:arial; line-height:1.25"><strong>Cumulative Cases</strong></p>
+
+    </div>
+  </div>
+
+<!---->
+
+
+  <div class="position-relative widget-body flex-fluid full-width flex-vertical overflow-y-hidden overflow-x-hidden">
+        <div id="ember83" class="flex-fluid am-chart ember-view" style="overflow: hidden; text-align: left;"><div class="amcharts-main-div" style="position: relative;"><div class="amcharts-chart-div" style="overflow: hidden; position: relative; text-align: left; width: 124px; height: 36px; padding: 0px;"><svg version="1.1" style="position: absolute; width: 124px; height: 36px; top: 0.25px; left: -0.5px;"><desc>JavaScript chart by amCharts 3.21.14</desc><desc>JavaScript chart by amCharts 3.21.14</desc><desc>JavaScript chart by amCharts 3.21.14</desc><desc>JavaScript chart by amCharts 3.21.14</desc><g><path cs="100,100" d="M0.5,0.5 L123.5,0.5 L123.5,35.5 L0.5,35.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" class="amcharts-bg"></path><path cs="100,100" d="M0.5,0.5 L64.5,0.5 L64.5,0.5 L0.5,0.5 L0.5,0.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" class="amcharts-plot-area" transform="translate(39,20)"></path></g><g><g class="amcharts-category-axis" transform="translate(39,20)"></g><g class="amcharts-value-axis value-axis-valueAxisAuto0_1584985001264" transform="translate(39,20)" visibility="visible"><g><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L64.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#626a6e" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L64.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#626a6e" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L64.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#626a6e" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L64.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#626a6e" class="amcharts-axis-grid"></path></g></g></g><g></g><g></g><g></g><g></g><g><g transform="translate(39,20)" class="amcharts-graph-line amcharts-graph-graphAuto0_1584985001264"><g></g><g clip-path="url(#AmChartsEl-1)"><path cs="100,100" d="M1.5,0.5 L2.5,0.5 L3.5,0.5 L4.5,0.5 L6.5,0.5 L7.5,0.5 L8.5,0.5 L9.5,0.5 L10.5,0.5 L12.5,0.5 L13.5,0.5 L14.5,0.5 L15.5,0.5 L17.5,0.5 L18.5,0.5 L19.5,0.5 L20.5,0.5 L22.5,0.5 L23.5,0.5 L24.5,0.5 L25.5,0.5 L26.5,0.5 L28.5,0.5 L29.5,0.5 L30.5,0.5 L31.5,0.5 L33.5,0.5 L34.5,0.5 L35.5,0.5 L36.5,0.5 L38.5,0.5 L39.5,0.5 L40.5,0.5 L41.5,0.5 L42.5,0.5 L44.5,0.5 L45.5,0.5 L46.5,0.5 L47.5,0.5 L49.5,0.5 L50.5,0.5 L51.5,0.5 L52.5,0.5 L54.5,0.5 L55.5,0.5 L56.5,0.5 L57.5,0.5 L58.5,0.5 L60.5,0.5 L61.5,0.5 L62.5,0.5 L63.5,0.5" fill="none" stroke-width="1" stroke-opacity="1" stroke="#912b88" stroke-linejoin="round" class="amcharts-graph-stroke"></path></g><clipPath id="AmChartsEl-1"><rect x="0" y="0" width="64" height="1" rx="0" ry="0" stroke-width="0"></rect></clipPath><g></g></g></g><g></g><g><path cs="100,100" d="M0.5,0.5 L64.5,0.5 L64.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#626a6e" transform="translate(39,20)" class="amcharts-axis-zero-grid-valueAxisAuto0_1584985001264 amcharts-axis-zero-grid"></path><g class="amcharts-category-axis"><path cs="100,100" d="M0.5,0.5 L64.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" transform="translate(39,20)" class="amcharts-axis-line"></path></g><g class="amcharts-value-axis value-axis-valueAxisAuto0_1584985001264"><path cs="100,100" d="M0.5,0.5 L0.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" transform="translate(39,20)" class="amcharts-axis-line" visibility="visible"></path></g></g><g></g><g></g><g><g transform="translate(39,20)" class="amcharts-graph-line amcharts-graph-graphAuto0_1584985001264"><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(1,0)" aria-label="CumCases Jan 31, 2020 2" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(2,0)" aria-label="CumCases Feb 01, 2020 2" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(3,0)" aria-label="CumCases Feb 02, 2020 2" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(4,0)" aria-label="CumCases Feb 03, 2020 2" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(6,0)" aria-label="CumCases Feb 04, 2020 2" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(7,0)" aria-label="CumCases Feb 05, 2020 2" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(8,0)" aria-label="CumCases Feb 06, 2020 3" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(9,0)" aria-label="CumCases Feb 07, 2020 3" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(10,0)" aria-label="CumCases Feb 08, 2020 3" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(12,0)" aria-label="CumCases Feb 09, 2020 4" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(13,0)" aria-label="CumCases Feb 10, 2020 8" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(14,0)" aria-label="CumCases Feb 11, 2020 8" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(15,0)" aria-label="CumCases Feb 12, 2020 8" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(17,0)" aria-label="CumCases Feb 13, 2020 9" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(18,0)" aria-label="CumCases Feb 14, 2020 9" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(19,0)" aria-label="CumCases Feb 15, 2020 9" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(20,0)" aria-label="CumCases Feb 16, 2020 9" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(22,0)" aria-label="CumCases Feb 17, 2020 9" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(23,0)" aria-label="CumCases Feb 18, 2020 9" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(24,0)" aria-label="CumCases Feb 19, 2020 9" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(25,0)" aria-label="CumCases Feb 20, 2020 9" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(26,0)" aria-label="CumCases Feb 21, 2020 9" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(28,0)" aria-label="CumCases Feb 22, 2020 9" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(29,0)" aria-label="CumCases Feb 23, 2020 9" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(30,0)" aria-label="CumCases Feb 24, 2020 13" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(31,0)" aria-label="CumCases Feb 25, 2020 13" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(33,0)" aria-label="CumCases Feb 26, 2020 13" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(34,0)" aria-label="CumCases Feb 27, 2020 13" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(35,0)" aria-label="CumCases Feb 28, 2020 19" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(36,0)" aria-label="CumCases Feb 29, 2020 23" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(38,0)" aria-label="CumCases Mar 01, 2020 35" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(39,0)" aria-label="CumCases Mar 02, 2020 40" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(40,0)" aria-label="CumCases Mar 03, 2020 51" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(41,0)" aria-label="CumCases Mar 04, 2020 85" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(42,0)" aria-label="CumCases Mar 05, 2020 114" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(44,0)" aria-label="CumCases Mar 06, 2020 160" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(45,0)" aria-label="CumCases Mar 07, 2020 206" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(46,0)" aria-label="CumCases Mar 08, 2020 271" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(47,0)" aria-label="CumCases Mar 09, 2020 321" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(49,0)" aria-label="CumCases Mar 10, 2020 373" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(50,0)" aria-label="CumCases Mar 11, 2020 456" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(51,0)" aria-label="CumCases Mar 12, 2020 590" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(52,0)" aria-label="CumCases Mar 13, 2020 797" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(54,0)" aria-label="CumCases Mar 14, 2020 1,061" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(55,0)" aria-label="CumCases Mar 15, 2020 1,391" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(56,0)" aria-label="CumCases Mar 16, 2020 1,543" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(57,0)" aria-label="CumCases Mar 17, 2020 1,950" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(58,0)" aria-label="CumCases Mar 18, 2020 2,626" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(60,0)" aria-label="CumCases Mar 19, 2020 3,269" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(61,0)" aria-label="CumCases Mar 20, 2020 3,983" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(62,0)" aria-label="CumCases Mar 21, 2020 5,018" class="amcharts-graph-bullet"></circle><circle r="3" cx="0" cy="0" fill="#912b88" stroke="#912b88" fill-opacity="1" stroke-width="1" stroke-opacity="0" transform="translate(63,0)" aria-label="CumCases Mar 22, 2020 5,683" class="amcharts-graph-bullet"></circle></g></g><g><g></g></g><g><g class="amcharts-category-axis" transform="translate(39,20)" visibility="visible"><text y="6" fill="#626a6e" font-family="inherit" font-size="11px" opacity="1" text-anchor="middle" transform="translate(20.076923081169188,12.5)" class="amcharts-axis-label"><tspan y="6" x="0">Feb</tspan></text><text y="6" fill="#626a6e" font-family="inherit" font-size="11px" opacity="1" text-anchor="middle" transform="translate(56.076923081169184,12.5)" class="amcharts-axis-label"><tspan y="6" x="0">Mar</tspan></text></g><g class="amcharts-value-axis value-axis-valueAxisAuto0_1584985001264" transform="translate(39,20)" visibility="visible"><text y="6" fill="#626a6e" font-family="inherit" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,-1.0703125)" class="amcharts-axis-label"><tspan y="6" x="0">0</tspan></text><text y="6" fill="#626a6e" font-family="inherit" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,-1.0703125)" class="amcharts-axis-label"><tspan y="6" x="0">2k</tspan></text><text y="6" fill="#626a6e" font-family="inherit" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,-1.0703125)" class="amcharts-axis-label"><tspan y="6" x="0">4k</tspan></text><text y="6" fill="#626a6e" font-family="inherit" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,-1.0703125)" class="amcharts-axis-label"><tspan y="6" x="0">6k</tspan></text></g></g><g></g><g transform="translate(39,20)"></g><g></g><g></g></svg></div></div></div>
+
+  </div>
+
+
+
+<!---->
+<!----></div>
+
+
+  </full-container>
+</margin-container>
+</div><div style="left:0px;top:191.61721321624668px;width:157.87623256228858px;height:67.46047667899116px;" id="ember84" class="dock-element ember-view"> <margin-container class="left right top bottom" style="border-color: #ffffff;">
+  <full-container>
+                            <div style="color:#0b0c0c;" id="ember85" class="widget flex-vertical full-height chart-widget serial-chart-widget ember-view"><!---->
+  <div class="flex-fix widget-header">
+    <div class="caption">
+      <p style="font-family:arial; line-height:1.25"><strong>Daily Confirmed Cases</strong></p>
+
+    </div>
+  </div>
+
+<!---->
+
+
+  <div class="position-relative widget-body flex-fluid full-width flex-vertical overflow-y-hidden overflow-x-hidden">
+        <div id="ember91" class="flex-fluid am-chart ember-view" style="overflow: hidden; text-align: left;"><div class="amcharts-main-div" style="position: relative;"><div class="amcharts-chart-div" style="overflow: hidden; position: relative; text-align: left; width: 124px; height: 39px; padding: 0px;"><svg version="1.1" style="position: absolute; width: 124px; height: 39px; top: 0.234375px; left: -0.5px;"><desc>JavaScript chart by amCharts 3.21.14</desc><desc>JavaScript chart by amCharts 3.21.14</desc><desc>JavaScript chart by amCharts 3.21.14</desc><desc>JavaScript chart by amCharts 3.21.14</desc><g><path cs="100,100" d="M0.5,0.5 L123.5,0.5 L123.5,38.5 L0.5,38.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" class="amcharts-bg"></path><path cs="100,100" d="M0.5,0.5 L55.5,0.5 L55.5,0.5 L0.5,0.5 L0.5,0.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" class="amcharts-plot-area" transform="translate(48,20)"></path></g><g><g class="amcharts-category-axis" transform="translate(48,20)"></g><g class="amcharts-value-axis value-axis-valueAxisAuto0_1584985001271" transform="translate(48,20)" visibility="visible"><g><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L55.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#626a6e" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L55.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#626a6e" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L55.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#626a6e" class="amcharts-axis-grid"></path></g><g><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L55.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#626a6e" class="amcharts-axis-grid"></path></g></g></g><g></g><g></g><g></g><g></g><g><g transform="translate(48,20)" class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271"><g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(1,0)" aria-label="CMODateCount Jan 31, 2020 2"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(2,0)" aria-label="CMODateCount Feb 01, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(3,0)" aria-label="CMODateCount Feb 02, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(4,0)" aria-label="CMODateCount Feb 03, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(5,0)" aria-label="CMODateCount Feb 04, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(6,0)" aria-label="CMODateCount Feb 05, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(7,0)" aria-label="CMODateCount Feb 06, 2020 1"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(8,0)" aria-label="CMODateCount Feb 07, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(9,0)" aria-label="CMODateCount Feb 08, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(10,0)" aria-label="CMODateCount Feb 09, 2020 1"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(11,0)" aria-label="CMODateCount Feb 10, 2020 4"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(12,0)" aria-label="CMODateCount Feb 11, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(13,0)" aria-label="CMODateCount Feb 12, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(14,0)" aria-label="CMODateCount Feb 13, 2020 1"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(15,0)" aria-label="CMODateCount Feb 14, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(16,0)" aria-label="CMODateCount Feb 15, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(17,0)" aria-label="CMODateCount Feb 16, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(19,0)" aria-label="CMODateCount Feb 17, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(20,0)" aria-label="CMODateCount Feb 18, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(21,0)" aria-label="CMODateCount Feb 19, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(22,0)" aria-label="CMODateCount Feb 20, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(23,0)" aria-label="CMODateCount Feb 21, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(24,0)" aria-label="CMODateCount Feb 22, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(25,0)" aria-label="CMODateCount Feb 23, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(26,0)" aria-label="CMODateCount Feb 24, 2020 4"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(27,0)" aria-label="CMODateCount Feb 25, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(28,0)" aria-label="CMODateCount Feb 26, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(29,0)" aria-label="CMODateCount Feb 27, 2020 0"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(30,0)" aria-label="CMODateCount Feb 28, 2020 6"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(31,0)" aria-label="CMODateCount Feb 29, 2020 4"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(32,0)" aria-label="CMODateCount Mar 01, 2020 12"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(33,0)" aria-label="CMODateCount Mar 02, 2020 5"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(34,0)" aria-label="CMODateCount Mar 03, 2020 11"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(35,0)" aria-label="CMODateCount Mar 04, 2020 34"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(36,0)" aria-label="CMODateCount Mar 05, 2020 29"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(38,0)" aria-label="CMODateCount Mar 06, 2020 46"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(39,0)" aria-label="CMODateCount Mar 07, 2020 46"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(40,0)" aria-label="CMODateCount Mar 08, 2020 65"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(41,0)" aria-label="CMODateCount Mar 09, 2020 50"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(42,0)" aria-label="CMODateCount Mar 10, 2020 52"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(43,0)" aria-label="CMODateCount Mar 11, 2020 83"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(44,0)" aria-label="CMODateCount Mar 12, 2020 139"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(45,0)" aria-label="CMODateCount Mar 13, 2020 207"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(46,0)" aria-label="CMODateCount Mar 14, 2020 264"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(47,0)" aria-label="CMODateCount Mar 15, 2020 330"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(48,0)" aria-label="CMODateCount Mar 16, 2020 152"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(49,0)" aria-label="CMODateCount Mar 17, 2020 407"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(50,0)" aria-label="CMODateCount Mar 18, 2020 676"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(51,0)" aria-label="CMODateCount Mar 19, 2020 643"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(52,0)" aria-label="CMODateCount Mar 20, 2020 714"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(53,0)" aria-label="CMODateCount Mar 21, 2020 1,035"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g><g class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271" transform="translate(54,0)" aria-label="CMODateCount Mar 22, 2020 665"><path cs="100,100" d="M0.5,0.5 L1.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#1aad95" class="amcharts-graph-column-front amcharts-graph-column-element"></path></g></g></g></g><g></g><g><path cs="100,100" d="M0.5,0.5 L55.5,0.5 L55.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#626a6e" transform="translate(48,20)" class="amcharts-axis-zero-grid-valueAxisAuto0_1584985001271 amcharts-axis-zero-grid"></path><g class="amcharts-category-axis"><path cs="100,100" d="M0.5,0.5 L55.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" transform="translate(48,20)" class="amcharts-axis-line"></path></g><g class="amcharts-value-axis value-axis-valueAxisAuto0_1584985001271"><path cs="100,100" d="M0.5,0.5 L0.5,0.5" fill="none" stroke-width="1" stroke-opacity="0" transform="translate(48,20)" class="amcharts-axis-line" visibility="visible"></path></g></g><g></g><g></g><g><g transform="translate(48,20)" class="amcharts-graph-column amcharts-graph-graphAuto0_1584985001271"></g></g><g><g></g></g><g><g class="amcharts-category-axis" transform="translate(48,20)" visibility="visible"><text y="6" fill="#0b0c0c" font-family="inherit" font-size="11px" opacity="1" text-anchor="middle" transform="translate(17.39423077287977,12.5)" class="amcharts-axis-label"><tspan y="6" x="0">Feb</tspan></text><text y="6" fill="#0b0c0c" font-family="inherit" font-size="11px" opacity="1" text-anchor="middle" transform="translate(48.394230772879766,12.5)" class="amcharts-axis-label"><tspan y="6" x="0">Mar</tspan></text></g><g class="amcharts-value-axis value-axis-valueAxisAuto0_1584985001271" transform="translate(48,20)" visibility="visible"><text y="6" fill="#0b0c0c" font-family="inherit" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,-1.0703125)" class="amcharts-axis-label"><tspan y="6" x="0">0</tspan></text><text y="6" fill="#0b0c0c" font-family="inherit" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,-1.0703125)" class="amcharts-axis-label"><tspan y="6" x="0">500</tspan></text><text y="6" fill="#0b0c0c" font-family="inherit" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,-1.0703125)" class="amcharts-axis-label"><tspan y="6" x="0">1k</tspan></text><text y="6" fill="#0b0c0c" font-family="inherit" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,-1.0703125)" class="amcharts-axis-label"><tspan y="6" x="0">1.5k</tspan></text></g></g><g></g><g transform="translate(48,20)"></g><g></g><g></g></svg></div></div></div>
+
+  </div>
+
+
+
+<!---->
+<!----></div>
+
+
+  </full-container>
+</margin-container>
+</div><div style="left:157.87623256228858px;top:29.75886513126568px;width:140.2037150130719px;height:229.31882476397212px;" id="ember92" class="dock-element ember-view"> <margin-container class="left right top bottom" style="border-color: #ffffff;">
+  <full-container>
+                            <div style="color:#0b0c0c;" id="ember93" class="widget flex-vertical full-height map-container dropdownBorder map-widget ember-view"><!---->
+<!---->
+<!---->
+
+
+  <div class="position-relative widget-body flex-fluid full-width flex-vertical overflow-y-hidden overflow-x-hidden">
+          <div class="map flex-fluid"><div id="esri.Map_0_root" class="esriMapContainer" style="width: 128px; height: 217px; direction: ltr;"><div id="esri.Map_0_container" class="esriMapContainer" style="position: absolute; cursor: default; -webkit-user-select: none;"><div id="esri.Map_0_layers" class="esriMapLayers"></div></div><div class="esriControlsBR"><span class="esriAttribution" style="max-width: 57px;"><span class="esriAttributionList"></span></span></div></div></div>
+
+<!---->
+  </div>
+
+
+
+<!---->
+<!----></div>
+
+
+  </full-container>
+</margin-container>
+</div><div style="left:298.07994757536045px;top:29.75886513126568px;width:91.92005242463958px;height:32.42697522168754px;" id="ember97" class="dock-element ember-view"> <margin-container class="left right top bottom" style="border-color: #ffffff;">
+  <full-container>
+                            <div style="color:#0b0c0c;" id="ember98" class="widget flex-vertical full-height rich-text-widget ember-view"><!---->
+<!---->
+<!---->
+
+
+  <div class="external-html panel-padding-quarter widget-body flex-fluid full-width flex-vertical overflow-y-auto overflow-x-hidden">
+        <h3 style="font-family:arial; font-size:20px; line-height:1.25"><span style="font-size:18px"><strong>Upper Tier Local Authorities (UTLA) and NHS Regions</strong></span></h3>
+
+
+  </div>
+
+
+
+<!---->
+<!----></div>
+
+
+  </full-container>
+</margin-container>
+</div><div style="left:298.07994757536045px;top:62.18584035295322px;width:91.92005242463958px;height:161.89184954228463px;" id="ember102" class="dock-element ember-view"> <margin-container class="left right top" style="border-color: #ffffff;">
+  <full-container>
+                            <div style="color:#0b0c0c;" id="ember103" class="widget flex-vertical full-height list-widget ember-view"><!---->
+<!---->
+<!---->
+
+
+  <div class="widget-body flex-fluid full-width flex-vertical overflow-y-auto overflow-x-hidden">
+        <nav class="feature-list">
+        <span style="border-bottom-color: #ebebeb;" id="ember166" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Hampshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>156</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember168" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Southwark:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>139</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember170" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Brent:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>128</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember172" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Lambeth:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>127</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember174" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Westminster:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>117</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember176" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Wandsworth:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>110</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember178" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Harrow:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>103</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember180" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Ealing:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>97</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember182" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Hertfordshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>92</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember184" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Birmingham:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>91</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember186" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Barnet:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>88</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember188" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Croydon:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>84</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember190" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Sheffield:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>82</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember192" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Kensington and Chelsea:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>81</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember194" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Cumbria:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>79</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember196" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Derbyshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>75</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember198" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Enfield:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>68</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember200" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Surrey:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>68</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember202" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Bromley:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>67</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember204" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Lewisham:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>67</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember206" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Hackney and City of London:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>64</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember208" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Hounslow:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>64</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember210" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Hillingdon:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>63</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember212" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Greenwich:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>61</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember214" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Nottinghamshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>60</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember216" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Haringey:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>57</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember218" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Newham:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>57</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember220" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Tower Hamlets:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>57</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember222" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Merton:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>56</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember224" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Islington:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>54</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember226" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Camden:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>53</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember228" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Essex:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>53</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember230" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Wolverhampton:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>52</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember232" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Oxfordshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>52</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember234" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Hammersmith and Fulham:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>51</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember236" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Waltham Forest:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>50</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember238" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Kent:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>48</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember240" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Redbridge:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>45</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember242" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Buckinghamshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>44</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember244" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Lancashire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>44</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember246" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Devon:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>43</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember248" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Leicestershire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>43</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember250" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Staffordshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>41</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember252" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Bexley:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>39</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember254" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Barking and Dagenham:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>35</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember256" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Havering:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>35</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember258" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Nottingham:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>34</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember260" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Newcastle upon Tyne:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>34</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember262" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Norfolk:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>34</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember264" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Manchester:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>31</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember266" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Stockport:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>29</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember268" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Walsall:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>29</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember270" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Leeds:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>29</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember272" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Gloucestershire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>29</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember274" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Warwickshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>29</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember276" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">West Sussex:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>27</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember278" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Portsmouth:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>25</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember280" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Richmond upon Thames:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>25</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember282" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Dudley:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>24</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember284" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Sutton:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>24</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember286" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Derby:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>23</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember288" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Bristol, City of:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>23</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember290" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Wiltshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>23</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember292" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Trafford:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>23</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember294" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Oldham:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>23</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember296" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Salford:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>23</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember298" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Kingston upon Thames:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>23</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember300" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Liverpool:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>22</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember302" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Slough:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>21</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember304" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Tameside:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>21</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember306" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Northamptonshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>21</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember308" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Cornwall and Isles of Scilly:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>20</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember310" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Sandwell:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>20</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember312" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Cambridgeshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>20</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember314" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">North Yorkshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>20</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember316" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Leicester:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>19</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember318" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Worcestershire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>19</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember320" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Cheshire East:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>18</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember322" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">North Tyneside:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>18</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember324" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Suffolk:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>18</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember326" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">South Gloucestershire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>17</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember328" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Brighton and Hove:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>17</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember330" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Bolton:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>17</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember332" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Torbay:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>16</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember334" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">East Riding of Yorkshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>15</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember336" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Rochdale:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>15</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember338" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Central Bedfordshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>14</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember340" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Bury:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>14</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember342" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Coventry:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>14</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember344" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Lincolnshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>14</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember346" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Bath and North East Somerset:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>13</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember348" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Windsor and Maidenhead:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>13</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember350" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Wokingham:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>13</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember352" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Somerset:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>13</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember354" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Bournemouth, Christchurch and Poole:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>12</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember356" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Stockton-on-Tees:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>11</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember358" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Plymouth:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>11</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember360" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Medway:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>11</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember362" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Milton Keynes:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>11</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember364" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Southampton:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>11</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember366" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">County Durham:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>11</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember368" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Cheshire West and Chester:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>11</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember370" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Dorset:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>11</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember372" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Sunderland:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>11</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember374" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Bradford:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>11</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember376" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Kirklees:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>11</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember378" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">York:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>10</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember380" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Thurrock:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>10</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember382" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Northumberland:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>10</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember384" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Wirral:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>10</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember386" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Barnsley:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>10</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember388" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Wakefield:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>10</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember390" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Wigan:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>9</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember392" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Rotherham:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>9</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember394" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">East Sussex:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>9</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember396" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Luton:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>8</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember398" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Southend-on-Sea:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>8</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember400" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">West Berkshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>8</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember402" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Reading:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>8</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember404" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Sefton:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>8</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember406" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Halton:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>7</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember408" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Herefordshire, County of:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>7</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember410" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Doncaster:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>7</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember412" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Blackpool:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>6</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember414" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Swindon:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>6</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember416" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">North Somerset:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>5</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember418" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">South Tyneside:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>5</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember420" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Calderdale:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>5</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember422" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Warrington:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>4</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember424" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Bedford:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>4</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember426" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Knowsley:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>4</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember428" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Solihull:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>4</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember430" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Redcar and Cleveland:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>3</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember432" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Darlington:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>3</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember434" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Bracknell Forest:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>3</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember436" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Shropshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>3</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember438" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">St. Helens:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>3</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember440" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Gateshead:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>3</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember442" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Hartlepool:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>2</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember444" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">North Lincolnshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>2</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember446" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Stoke-on-Trent:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>2</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember448" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Peterborough:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>2</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember450" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Isle of Wight:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>2</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember452" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Middlesbrough:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>1</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember454" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Blackburn with Darwen:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>1</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember456" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Kingston upon Hull, City of:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>1</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember458" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">North East Lincolnshire:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>1</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember460" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Telford and Wrekin:&nbsp;<span style="align-items:center; background-color:#1d70b8; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>1</strong></span></p>
+
+  </div>
+</div>
+</span>
+    </nav>
+
+  </div>
+
+
+
+<!---->
+<!----></div>
+
+
+  </full-container>
+</margin-container>
+</div><div style="left:298.07994757536045px;top:62.18584035295322px;width:91.92005242463958px;height:161.89184954228463px;" id="ember109" class="dock-element invisible ember-view"> <margin-container class="left right top" style="border-color: #ffffff;">
+  <full-container>
+                            <div style="color:#0b0c0c;" id="ember110" class="widget flex-vertical full-height list-widget ember-view"><!---->
+<!---->
+<!---->
+
+
+  <div class="widget-body flex-fluid full-width flex-vertical overflow-y-auto overflow-x-hidden">
+        <nav class="feature-list">
+        <span style="border-bottom-color: #ebebeb;" id="ember462" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">London:&nbsp;<span style="align-items:center; background-color:#6f72af; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>2,189</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember464" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">Midlands:&nbsp;<span style="align-items:center; background-color:#6f72af; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>624</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember466" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">South East:&nbsp;<span style="align-items:center; background-color:#6f72af; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>536</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember468" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">North West:&nbsp;<span style="align-items:center; background-color:#6f72af; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>390</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember470" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">North East and Yorkshire:&nbsp;<span style="align-items:center; background-color:#6f72af; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>368</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember472" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">East of England:&nbsp;<span style="align-items:center; background-color:#6f72af; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>274</strong></span></p>
+
+  </div>
+</div>
+</span>
+        <span style="border-bottom-color: #ebebeb;" id="ember474" class="flex-horizontal feature-list-item ember-view"><!----><!----><div class="flex-fluid list-item-content overflow-hidden ">
+  <div class="external-html">
+    <p style="font-family:arial; line-height:1.25">South West:&nbsp;<span style="align-items:center; background-color:#6f72af; border-radius:9999px; color:#ffffff; display:inline-block; font-size:10px; line-height:1; padding:.35rem .55rem"><strong>242</strong></span></p>
+
+  </div>
+</div>
+</span>
+    </nav>
+
+  </div>
+
+
+
+<!---->
+<!----></div>
+
+
+  </full-container>
+</margin-container>
+</div><div style="left:298.07994757536045px;top:62.18584035295322px;width:91.92005242463958px;height:161.89184954228463px;" id="ember116" class="dock-element invisible ember-view"> <margin-container class="left right top" style="border-color: #ffffff;">
+  <full-container>
+                            <div style="color:#0b0c0c;" id="ember117" class="widget flex-vertical full-height legend-widget ember-view"><!---->
+<!---->
+<!---->
+
+
+  <div class="widget-body flex-fluid full-width flex-vertical overflow-y-auto overflow-x-hidden">
+        <div class="esri-legend-widget"></div>
+
+  </div>
+  
+
+
+<!---->
+<!----></div>
+
+
+  </full-container>
+</margin-container>
+</div><div style="left:0px;top:259.0776898952378px;width:390px;height:30.9223101047623px;" id="ember121" class="dock-element ember-view"> <margin-container class="left right top bottom" style="border-color: #ffffff;">
+  <full-container>
+                            <div style="color:#0b0c0c;" id="ember122" class="widget flex-vertical full-height rich-text-widget ember-view"><!---->
+<!---->
+<!---->
+
+
+  <div class="external-html panel-padding-quarter widget-body flex-fluid full-width flex-vertical overflow-y-auto overflow-x-hidden">
+        <p><span style="color:#999999"><em><span style="font-size:7pt"><span style="font-family:&quot;Arial&quot;,sans-serif">Daily updates are sometimes delayed as data cannot be published until signed off by DHSC.&nbsp;Case data is based on cases reported to PHE by diagnostic laboratories&nbsp;and matched to ONS administrative geography codes and names to generate geographic case counts. Total number for England may not match UTLA and NHS Regions number as some cases are awaiting geographical information. Cases include people who are recovered. Time series data indicate the date of communication to PHE and is used to define the charts and totals. The map is using proportional symbols to represent the number of cases at the geographic centres of Country, NHS England and County/UTLA boundaries. Devolved Administration data is represented on the charts, total indicators and on the Country level map layer, however it is not included in the NHS England Region and County/UTLA map layers. Data for Devolved Administrations has been sourced from authorised published data and is correct at time of publishing and subject to change.&nbsp;Contains Ordnance Survey data © Crown copyright and database right 2020. Contains National Statistics data © Crown copyright and database right 2020. </span></span></em></span><em><span style="color:#999999"><span style="font-family:Arial"><span style="font-size:x-small">There may be some minor fluctuations in the daily number of cases due to laboratory reporting delays. Patients recovered is the number of people discharged from NHS clinical services in England following a positive test result for COVID-19. England case count is as of 09:00 (GMT)</span></span></span></em></p>
+
+
+  </div>
+
+
+
+<!---->
+<!----></div>
+
+
+  </full-container>
+</margin-container>
+</div>
+      <div style="left:298.07994757536045px;top:224.07768989523785px;width:91.92005242463958px;height:35px" id="ember127" class="dock-tabs ember-view"><margin-container class="left right " style="border-color: #ffffff;">
+  <full-container>
+    <div class="tabs-container">
+
+        <div class="collapsed-menu-container">
+<nav role="menu" id="ember142" class="dropdown-outside drop-up collapsed-dropdown-menu dropdown-menu ember-view">            <span class="dropdown-title text-center">
+              <b>Select a Tab</b>
+            </span>
+<nav id="ember143" class="sortable-collection disabled ember-view">  <span id="ember144" class="dropdown-link ember-view">                <div class="flex-horizontal">
+<div id="ember145" style="display: none;" class="ember-view">                    <span class="icon-ui-drag-horizontal"></span>
+
+</div>                  <div class="flex-fluid overflow-hidden" data-ember-action="" data-ember-action-147="147">
+                    <div id="ember146" class="text-ellipsis ember-view">UTLA
+</div>
+                  </div>
+                </div>
+
+</span>
+  <span id="ember148" class="dropdown-link ember-view">                <div class="flex-horizontal">
+<div id="ember149" style="display: none;" class="ember-view">                    <span class="icon-ui-drag-horizontal"></span>
+
+</div>                  <div class="flex-fluid overflow-hidden" data-ember-action="" data-ember-action-151="151">
+                    <div id="ember150" class="text-ellipsis ember-view">NHS Regions
+</div>
+                  </div>
+                </div>
+
+</span>
+  <span id="ember152" class="dropdown-link ember-view">                <div class="flex-horizontal">
+<div id="ember153" style="display: none;" class="ember-view">                    <span class="icon-ui-drag-horizontal"></span>
+
+</div>                  <div class="flex-fluid overflow-hidden" data-ember-action="" data-ember-action-155="155">
+                    <div id="ember154" class="text-ellipsis ember-view">Legend
+</div>
+                  </div>
+                </div>
+
+</span>
+</nav></nav>        </div>
+
+        <div class="flex-horizontal collapsed-bar-container overflow-hidden" style="border-color: #ffffff;">
+          <div class="flex-fix">
+            <a class="btn nav-btn" data-ember-action="" data-ember-action-158="158"><span id="ember156" class="icon-element ember-view"><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" height="16px" width="16px" viewBox="0 0 16 16" id="ember157" class="ember-view"><path d="M11 15.5l-7-7 7-7zM10 3.914L5.414 8.5 10 13.086z"></path></svg></span></a>
+          </div>
+          <div class="flex-fluid overflow-hidden">
+<div id="ember159" class="flex-justify-center draggable ember-view"><button aria-expanded="false" aria-haspopup="true" tabindex="0" id="ember160" class="dropdown-outside drop-up btn btn-white dropdown-btn ember-view">                  <div id="ember161" class="text-ellipsis ember-view">UTLA
+</div>
+
+</button></div>          </div>
+<!---->          <div class="flex-fix">
+            <a class="btn nav-btn" data-ember-action="" data-ember-action-164="164"><span id="ember162" class="icon-element ember-view"><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" height="16px" width="16px" viewBox="0 0 16 16" id="ember163" class="ember-view"><path d="M5 1.5l7 7-7 7zm1 11.586L10.586 8.5 6 3.914z"></path></svg></span></a>
+          </div>
+        </div>
+
+      
+<nav id="ember128" class="tab-nav invisible sortable-collection disabled ember-view">  <span style="border-left-color:#ffffff;border-right-color:#ffffff;border-bottom-color:#00ad93;" id="ember130" class="tab-title is-active ember-view"><a id="ember131" class="ember-view">            <div id="ember132" class="ember-view">UTLA
+</div>
+
+</a><!---->
+</span>
+  <span style="border-left-color:#ffffff;border-right-color:#ffffff;border-top-color:#ffffff;border-bottom-color:#ffffff;" id="ember134" class="tab-title ember-view"><a id="ember135" class="ember-view">            <div id="ember136" class="ember-view">NHS Regions
+</div>
+
+</a><!---->
+</span>
+  <span style="border-left-color:#ffffff;border-right-color:#ffffff;border-top-color:#ffffff;border-bottom-color:#ffffff;" id="ember138" class="tab-title ember-view"><a id="ember139" class="ember-view">            <div id="ember140" class="ember-view">Legend
+</div>
+
+</a><!---->
+</span>
+</nav>
+    </div>
+  </full-container>
+</margin-container>
+</div>
+
+      <a style="visibility: hidden;" id="ember141" class="dock-expand ember-view">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" width="12px" height="12px">
+    <path vector-effect="non-scaling-stroke" d="M9.645 5.648L13.244 2h-3.205V1h4.9v5h-1V2.719l-3.584 3.633zm-4 4L2.06 13.281V10h-1v5h4.9v-1H2.756l3.6-3.648zM14 10.04v3.205l-3.648-3.6-.704.711 3.633 3.584H10v1h5v-4.9zM2 2.756l3.648 3.6.704-.711L2.719 2.06H6v-1H1v4.9h1z"></path>
+</svg></a>
+
+<!---->
+<!---->  </full-container>
+</margin-container>
+</div>            </div>
+          </div>
+
+      </div>
+</div>
+<!---->
+
+</div>
+<!----></body></html>
