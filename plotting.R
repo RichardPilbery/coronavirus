@@ -9,13 +9,11 @@ df <- read_csv('coronavirus-data.csv') %>%
 
 ggplot(df, aes(x=rep_date)) +
   geom_point(aes(y=positive), stat="identity") + 
-  geom_line(aes(y=positive), stat="identity") +
-  scale_y_log10()
+  geom_line(aes(y=positive), stat="identity")
 
 ggplot(df, aes(x=rep_date)) +
   geom_point(aes(y=deaths), stat="identity") + 
-  geom_line(aes(y=deaths), stat="identity") +
-  scale_y_log10()
+  geom_line(aes(y=deaths), stat="identity")
 
 
 ggplot(df, aes(x=rep_date)) +
