@@ -59,13 +59,13 @@ today <- lubridate::dmy(str_extract(text2[3], "\\d{1,2}(rd|th|nd|st){1}\\s(Janua
 
 # Calculate UTLA data
 
-covid_utla <- process_covid(text2[16], today)
+covid_utla <- process_covid(text2[14], today)
 
 write_csv(covid_utla, 'covid-utla-data.csv', append=T)
 
 # Calculate NHS data
 
-covid_nhs <- process_covid(text2[17], today)
+covid_nhs <- process_covid(text2[15], today)
 
 write_csv(covid_nhs, 'covid-nhs-data.csv', append=T)
 
@@ -73,14 +73,18 @@ write_csv(covid_nhs, 'covid-nhs-data.csv', append=T)
 
 df <- tibble(
   thedate = lubridate::dmy(str_extract(text2[3], "\\d{1,2}(rd|th|nd|st){1}\\s(January|February|March|April|May|June|July|August|September|October|November|December)\\s2020")),
-  `Total UK cases` = as.numeric(str_extract_all(text[4], "\\d+") %>% unlist() %>% paste(sep="", collapse="")),
-  `Daily Confirmed Cases` = as.numeric(str_extract_all(text[5], "\\d+") %>% unlist() %>% paste(sep="", collapse="")),
+  `Total UK cases` = as.numeric(str_extract_all(gsub(",","",text[4]), "\\d+") %>% unlist())[1],
+  `Daily Confirmed Cases` = as.numeric(str_extract_all(gsub(",","",text[5]), "\\d+") %>% unlist())[1],
   `Patients recovered` = as.numeric(str_extract_all(text[6], "\\d+") %>% unlist() %>% paste(sep="", collapse="")),
-  `Total UK deats` = as.numeric(str_extract_all(text[7], "\\d+") %>% unlist() %>% paste(sep="", collapse="")),
-  `Total England cases` = as.numeric(str_extract_all(text[8], "\\d+") %>% unlist() %>% paste(sep="", collapse="")),
-  `Total Scotland cases` = as.numeric(str_extract_all(text[9], "\\d+") %>% unlist() %>% paste(sep="", collapse="")),
-  `Total Wales cases` = as.numeric(str_extract_all(text[10], "\\d+") %>% unlist() %>% paste(sep="", collapse="")),
-  `Total N. Ireland cases` = as.numeric(str_extract_all(text[11], "\\d+") %>% unlist() %>% paste(sep="", collapse=""))
+  `Total UK deaths` = as.numeric(str_extract_all(gsub(",","",text[4]), "\\d+") %>% unlist())[2],
+  `Total England cases` = as.numeric(str_extract_all(gsub(",","",text[7]), "\\d+") %>% unlist())[1],
+  `Total Scotland cases` = as.numeric(str_extract_all(gsub(",","",text[8]), "\\d+") %>% unlist())[1],
+  `Total Wales cases` = as.numeric(str_extract_all(gsub(",","",text[9]), "\\d+") %>% unlist())[1],
+  `Total N. Ireland cases` = as.numeric(str_extract_all(gsub(",","",text[10]), "\\d+") %>% unlist())[1],
+  `Total England deaths` = as.numeric(str_extract_all(gsub(",","",text[7]), "\\d+") %>% unlist())[2],
+  `Total Scotland deaths` = as.numeric(str_extract_all(gsub(",","",text[8]), "\\d+") %>% unlist())[2],
+  `Total Wales deaths` = as.numeric(str_extract_all(gsub(",","",text[9]), "\\d+") %>% unlist())[2],
+  `Total N. Ireland deaths` = as.numeric(str_extract_all(gsub(",","",text[10]), "\\d+") %>% unlist())[2]
 )
 
 write_csv(df, 'covid-general-data.csv', append = T)

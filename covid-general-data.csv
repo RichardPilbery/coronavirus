@@ -1,6 +1,7 @@
-thedate,Total UK cases,Daily Confirmed Cases,Patients recovered,Total UK deats,Total England cases,Total Scotland cases,Total Wales cases,Total N. Ireland cases
-2020-03-22,5683,665,135,281,4792,416,347,128
-2020-03-23,6650,967,135,335,5585,499,418,148
-2020-03-24,8077,1427,135,422,6843,584,478,172
-2020-03-25,9529,1542,135,463,7973,719,628,209
-2020-03-26,11658,2129,135,578,9782,894,741,241
+thedate,Total UK cases,Daily Confirmed Cases,Patients recovered,Total UK deaths,Total England cases,Total Scotland cases,Total Wales cases,Total N. Ireland cases, Total England deaths, Total Scotland deaths, Total Wales deaths, Total N. Ireland deaths
+2020-03-22,5683,665,135,281,4792,416,347,128,,,,
+2020-03-23,6650,967,135,335,5585,499,418,148,,,,
+2020-03-24,8077,1427,135,422,6843,584,478,172,,,,
+2020-03-25,9529,1542,135,463,7973,719,628,209,,,,
+2020-03-26,11658,2129,135,578,9782,894,741,241,,,,
+2020-03-27,14543,2885,135,759,12288,1059,921,275,679,33,34,13
