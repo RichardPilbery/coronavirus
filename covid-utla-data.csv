@@ -295,151 +295,299 @@ thedate,num,name
 2020-03-24,3,Isle of Wight
 2020-03-24,2,Blackburn with Darwen
 2020-03-24,1,"Kingston upon Hull, City of"
-2020-03-26,251,Hampshire
-2020-03-26,228,Birmingham
-2020-03-26,212,Lambeth
-2020-03-26,209,Southwark
-2020-03-26,192,Brent
-2020-03-26,184,Wandsworth
-2020-03-26,174,Sheffield
-2020-03-26,163,Croydon
-2020-03-26,152,Westminster
-2020-03-26,147,Hertfordshire
-2020-03-26,145,Harrow
-2020-03-26,145,Cumbria
-2020-03-26,136,Ealing
-2020-03-26,125,Bromley
-2020-03-26,117,Surrey
-2020-03-26,114,Lewisham
-2020-03-26,110,Derbyshire
-2020-03-26,100,Barnet
-2020-03-26,98,Wolverhampton
-2020-03-26,98,Enfield
-2020-03-26,98,Merton
-2020-03-26,97,Greenwich
-2020-03-26,97,Kensington and Chelsea
-2020-03-26,97,Staffordshire
-2020-03-26,96,Kent
-2020-03-26,92,Nottinghamshire
-2020-03-26,90,Hillingdon
-2020-03-26,90,Hounslow
-2020-03-26,88,Essex
-2020-03-26,86,Oxfordshire
-2020-03-26,85,Hackney and City of London
-2020-03-26,80,Hammersmith and Fulham
-2020-03-26,80,Leicestershire
-2020-03-26,78,Lancashire
-2020-03-26,77,Newham
-2020-03-26,76,Haringey
-2020-03-26,71,Camden
-2020-03-26,71,Tower Hamlets
-2020-03-26,70,Islington
-2020-03-26,67,Redbridge
-2020-03-26,63,Waltham Forest
-2020-03-26,60,Walsall
-2020-03-26,59,Bexley
-2020-03-26,59,Buckinghamshire
-2020-03-26,59,Warwickshire
-2020-03-26,58,Newcastle upon Tyne
-2020-03-26,57,Nottingham
-2020-03-26,57,Liverpool
-2020-03-26,57,Gloucestershire
-2020-03-26,57,West Sussex
-2020-03-26,55,Worcestershire
-2020-03-26,53,Leeds
-2020-03-26,53,Barking and Dagenham
-2020-03-26,51,Dudley
-2020-03-26,50,Sandwell
-2020-03-26,50,Devon
-2020-03-26,47,Salford
-2020-03-26,47,Havering
-2020-03-26,45,Manchester
-2020-03-26,45,Stockport
-2020-03-26,45,Sutton
-2020-03-26,45,Norfolk
-2020-03-26,45,North Yorkshire
-2020-03-26,44,Richmond upon Thames
-2020-03-26,43,Northamptonshire
-2020-03-26,42,Oldham
-2020-03-26,41,"Bristol, City of"
-2020-03-26,41,Cambridgeshire
-2020-03-26,40,Derby
-2020-03-26,40,Trafford
-2020-03-26,39,Wiltshire
-2020-03-26,37,Cornwall and Isles of Scilly
-2020-03-26,37,Kingston upon Thames
-2020-03-26,35,Tameside
-2020-03-26,35,Suffolk
-2020-03-26,33,Portsmouth
-2020-03-26,33,Shropshire
-2020-03-26,32,Leicester
-2020-03-26,31,Lincolnshire
-2020-03-26,30,Cheshire East
-2020-03-26,29,Luton
-2020-03-26,29,Milton Keynes
-2020-03-26,29,Rochdale
-2020-03-26,28,Southampton
-2020-03-26,25,South Gloucestershire
-2020-03-26,25,Medway
-2020-03-26,25,Brighton and Hove
-2020-03-26,25,County Durham
-2020-03-26,25,Sunderland
-2020-03-26,25,Coventry
-2020-03-26,24,Central Bedfordshire
-2020-03-26,23,Dorset
-2020-03-26,23,Bury
-2020-03-26,23,North Tyneside
+2020-03-25,251,Hampshire
+2020-03-25,228,Birmingham
+2020-03-25,212,Lambeth
+2020-03-25,209,Southwark
+2020-03-25,192,Brent
+2020-03-25,184,Wandsworth
+2020-03-25,174,Sheffield
+2020-03-25,163,Croydon
+2020-03-25,152,Westminster
+2020-03-25,147,Hertfordshire
+2020-03-25,145,Harrow
+2020-03-25,145,Cumbria
+2020-03-25,136,Ealing
+2020-03-25,125,Bromley
+2020-03-25,117,Surrey
+2020-03-25,114,Lewisham
+2020-03-25,110,Derbyshire
+2020-03-25,100,Barnet
+2020-03-25,98,Wolverhampton
+2020-03-25,98,Enfield
+2020-03-25,98,Merton
+2020-03-25,97,Greenwich
+2020-03-25,97,Kensington and Chelsea
+2020-03-25,97,Staffordshire
+2020-03-25,96,Kent
+2020-03-25,92,Nottinghamshire
+2020-03-25,90,Hillingdon
+2020-03-25,90,Hounslow
+2020-03-25,88,Essex
+2020-03-25,86,Oxfordshire
+2020-03-25,85,Hackney and City of London
+2020-03-25,80,Hammersmith and Fulham
+2020-03-25,80,Leicestershire
+2020-03-25,78,Lancashire
+2020-03-25,77,Newham
+2020-03-25,76,Haringey
+2020-03-25,71,Camden
+2020-03-25,71,Tower Hamlets
+2020-03-25,70,Islington
+2020-03-25,67,Redbridge
+2020-03-25,63,Waltham Forest
+2020-03-25,60,Walsall
+2020-03-25,59,Bexley
+2020-03-25,59,Buckinghamshire
+2020-03-25,59,Warwickshire
+2020-03-25,58,Newcastle upon Tyne
+2020-03-25,57,Nottingham
+2020-03-25,57,Liverpool
+2020-03-25,57,Gloucestershire
+2020-03-25,57,West Sussex
+2020-03-25,55,Worcestershire
+2020-03-25,53,Leeds
+2020-03-25,53,Barking and Dagenham
+2020-03-25,51,Dudley
+2020-03-25,50,Sandwell
+2020-03-25,50,Devon
+2020-03-25,47,Salford
+2020-03-25,47,Havering
+2020-03-25,45,Manchester
+2020-03-25,45,Stockport
+2020-03-25,45,Sutton
+2020-03-25,45,Norfolk
+2020-03-25,45,North Yorkshire
+2020-03-25,44,Richmond upon Thames
+2020-03-25,43,Northamptonshire
+2020-03-25,42,Oldham
+2020-03-25,41,"Bristol, City of"
+2020-03-25,41,Cambridgeshire
+2020-03-25,40,Derby
+2020-03-25,40,Trafford
+2020-03-25,39,Wiltshire
+2020-03-25,37,Cornwall and Isles of Scilly
+2020-03-25,37,Kingston upon Thames
+2020-03-25,35,Tameside
+2020-03-25,35,Suffolk
+2020-03-25,33,Portsmouth
+2020-03-25,33,Shropshire
+2020-03-25,32,Leicester
+2020-03-25,31,Lincolnshire
+2020-03-25,30,Cheshire East
+2020-03-25,29,Luton
+2020-03-25,29,Milton Keynes
+2020-03-25,29,Rochdale
+2020-03-25,28,Southampton
+2020-03-25,25,South Gloucestershire
+2020-03-25,25,Medway
+2020-03-25,25,Brighton and Hove
+2020-03-25,25,County Durham
+2020-03-25,25,Sunderland
+2020-03-25,25,Coventry
+2020-03-25,24,Central Bedfordshire
+2020-03-25,23,Dorset
+2020-03-25,23,Bury
+2020-03-25,23,North Tyneside
+2020-03-25,22,Slough
+2020-03-25,22,East Sussex
+2020-03-25,22,Somerset
+2020-03-25,21,North Somerset
+2020-03-25,21,Plymouth
+2020-03-25,21,Bolton
+2020-03-25,20,Bath and North East Somerset
+2020-03-25,20,Sefton
+2020-03-25,20,Rotherham
+2020-03-25,20,Kirklees
+2020-03-25,19,East Riding of Yorkshire
+2020-03-25,19,Northumberland
+2020-03-25,19,Barnsley
+2020-03-25,19,Solihull
+2020-03-25,19,Wakefield
+2020-03-25,18,Torbay
+2020-03-25,18,Cheshire West and Chester
+2020-03-25,16,West Berkshire
+2020-03-25,16,St Helens
+2020-03-25,16,Wirral
+2020-03-25,16,Bradford
+2020-03-25,15,"Herefordshire, County of"
+2020-03-25,15,Thurrock
+2020-03-25,15,"Bournemouth, Christchurch and Poole"
+2020-03-25,15,Doncaster
+2020-03-25,14,Stockton on Tees
+2020-03-25,14,York
+2020-03-25,14,Wigan
+2020-03-25,13,Windsor and Maidenhead
+2020-03-25,13,Wokingham
+2020-03-25,12,Telford and Wrekin
+2020-03-25,12,Stoke on Trent
+2020-03-25,10,Redcar and Cleveland
+2020-03-25,10,Gateshead
+2020-03-25,9,Middlesbrough
+2020-03-25,9,Warrington
+2020-03-25,9,Peterborough
+2020-03-25,9,Southend on Sea
+2020-03-25,9,Reading
+2020-03-25,9,Knowsley
+2020-03-25,9,South Tyneside
+2020-03-25,8,Halton
+2020-03-25,8,Blackpool
+2020-03-25,8,Swindon
+2020-03-25,7,Bedford
+2020-03-25,7,Calderdale
+2020-03-25,5,North Lincolnshire
+2020-03-25,4,Darlington
+2020-03-25,3,Hartlepool
+2020-03-25,3,Blackburn with Darwen
+2020-03-25,3,North East Lincolnshire
+2020-03-25,3,Bracknell Forest
+2020-03-25,3,Isle of Wight
+2020-03-25,2,"Kingston upon Hull, City of"
+2020-03-26,290,Birmingham
+2020-03-26,267,Hampshire
+2020-03-26,253,Southwark
+2020-03-26,248,Lambeth
+2020-03-26,240,Sheffield
+2020-03-26,228,Brent
+2020-03-26,204,Wandsworth
+2020-03-26,181,Croydon
+2020-03-26,176,Cumbria
+2020-03-26,172,Westminster
+2020-03-26,170,Hertfordshire
+2020-03-26,167,Harrow
+2020-03-26,165,Ealing
+2020-03-26,149,Bromley
+2020-03-26,144,Lewisham
+2020-03-26,142,Surrey
+2020-03-26,139,Derbyshire
+2020-03-26,130,Essex
+2020-03-26,121,Staffordshire
+2020-03-26,119,Hackney and City of London
+2020-03-26,118,Greenwich
+2020-03-26,112,Hounslow
+2020-03-26,112,Kent
+2020-03-26,110,Enfield
+2020-03-26,110,Kensington and Chelsea
+2020-03-26,109,Newham
+2020-03-26,109,Nottinghamshire
+2020-03-26,108,Merton
+2020-03-26,103,Wolverhampton
+2020-03-26,103,Barnet
+2020-03-26,103,Hillingdon
+2020-03-26,102,Lancashire
+2020-03-26,98,Leicestershire
+2020-03-26,98,Oxfordshire
+2020-03-26,96,Islington
+2020-03-26,95,Waltham Forest
+2020-03-26,94,Hammersmith and Fulham
+2020-03-26,93,Tower Hamlets
+2020-03-26,91,Haringey
+2020-03-26,89,Redbridge
+2020-03-26,85,Camden
+2020-03-26,80,Newcastle upon Tyne
+2020-03-26,78,Walsall
+2020-03-26,77,Bexley
+2020-03-26,76,Worcestershire
+2020-03-26,74,Warwickshire
+2020-03-26,72,Liverpool
+2020-03-26,72,Barking and Dagenham
+2020-03-26,70,Havering
+2020-03-26,69,West Sussex
+2020-03-26,67,Nottingham
+2020-03-26,67,Leeds
+2020-03-26,66,Buckinghamshire
+2020-03-26,65,Sandwell
+2020-03-26,64,Gloucestershire
+2020-03-26,64,Northamptonshire
+2020-03-26,60,Dudley
+2020-03-26,58,Derby
+2020-03-26,55,Manchester
+2020-03-26,55,Richmond upon Thames
+2020-03-26,55,Devon
+2020-03-26,54,Sutton
+2020-03-26,52,Salford
+2020-03-26,51,"Bristol, City of"
+2020-03-26,51,Norfolk
+2020-03-26,50,North Yorkshire
+2020-03-26,48,Oldham
+2020-03-26,48,Stockport
+2020-03-26,47,Cambridgeshire
+2020-03-26,46,Trafford
+2020-03-26,45,Leicester
+2020-03-26,44,Shropshire
+2020-03-26,43,Cornwall and Isles of Scilly
+2020-03-26,43,Wiltshire
+2020-03-26,42,Portsmouth
+2020-03-26,42,Kingston upon Thames
+2020-03-26,42,Suffolk
+2020-03-26,40,Tameside
+2020-03-26,38,Milton Keynes
+2020-03-26,38,Rochdale
+2020-03-26,35,Coventry
+2020-03-26,32,Medway
+2020-03-26,32,Southampton
+2020-03-26,32,Lincolnshire
+2020-03-26,31,South Gloucestershire
+2020-03-26,31,Cheshire East
+2020-03-26,30,Luton
+2020-03-26,30,Brighton and Hove
+2020-03-26,30,Rotherham
+2020-03-26,29,County Durham
+2020-03-26,29,Solihull
+2020-03-26,28,Central Bedfordshire
+2020-03-26,27,Bury
+2020-03-26,27,Barnsley
+2020-03-26,27,North Tyneside
+2020-03-26,27,Sunderland
+2020-03-26,26,Plymouth
+2020-03-26,26,East Sussex
+2020-03-26,25,Dorset
+2020-03-26,25,Bolton
+2020-03-26,24,Cheshire West and Chester
+2020-03-26,24,Sefton
+2020-03-26,24,Kirklees
+2020-03-26,24,Wakefield
+2020-03-26,23,Bath and North East Somerset
+2020-03-26,23,Northumberland
+2020-03-26,23,Bradford
+2020-03-26,23,Somerset
+2020-03-26,22,North Somerset
 2020-03-26,22,Slough
-2020-03-26,22,East Sussex
-2020-03-26,22,Somerset
-2020-03-26,21,North Somerset
-2020-03-26,21,Plymouth
-2020-03-26,21,Bolton
-2020-03-26,20,Bath and North East Somerset
-2020-03-26,20,Sefton
-2020-03-26,20,Rotherham
-2020-03-26,20,Kirklees
-2020-03-26,19,East Riding of Yorkshire
-2020-03-26,19,Northumberland
-2020-03-26,19,Barnsley
-2020-03-26,19,Solihull
-2020-03-26,19,Wakefield
-2020-03-26,18,Torbay
-2020-03-26,18,Cheshire West and Chester
-2020-03-26,16,West Berkshire
-2020-03-26,16,St Helens
-2020-03-26,16,Wirral
-2020-03-26,16,Bradford
-2020-03-26,15,"Herefordshire, County of"
-2020-03-26,15,Thurrock
+2020-03-26,22,Wirral
+2020-03-26,21,East Riding of Yorkshire
+2020-03-26,21,"Herefordshire, County of"
+2020-03-26,21,Torbay
+2020-03-26,21,Doncaster
+2020-03-26,20,Thurrock
+2020-03-26,18,West Berkshire
+2020-03-26,17,Telford and Wrekin
+2020-03-26,17,St Helens
+2020-03-26,16,Stockton on Tees
+2020-03-26,16,Stoke on Trent
+2020-03-26,16,Wigan
 2020-03-26,15,"Bournemouth, Christchurch and Poole"
-2020-03-26,15,Doncaster
-2020-03-26,14,Stockton on Tees
 2020-03-26,14,York
-2020-03-26,14,Wigan
-2020-03-26,13,Windsor and Maidenhead
+2020-03-26,14,Windsor and Maidenhead
 2020-03-26,13,Wokingham
-2020-03-26,12,Telford and Wrekin
-2020-03-26,12,Stoke on Trent
+2020-03-26,12,Southend on Sea
+2020-03-26,12,Knowsley
+2020-03-26,12,Gateshead
+2020-03-26,11,Swindon
 2020-03-26,10,Redcar and Cleveland
-2020-03-26,10,Gateshead
+2020-03-26,10,Warrington
+2020-03-26,10,Peterborough
+2020-03-26,10,Reading
+2020-03-26,10,Bedford
+2020-03-26,10,South Tyneside
 2020-03-26,9,Middlesbrough
-2020-03-26,9,Warrington
-2020-03-26,9,Peterborough
-2020-03-26,9,Southend on Sea
-2020-03-26,9,Reading
-2020-03-26,9,Knowsley
-2020-03-26,9,South Tyneside
+2020-03-26,9,Calderdale
 2020-03-26,8,Halton
 2020-03-26,8,Blackpool
-2020-03-26,8,Swindon
-2020-03-26,7,Bedford
-2020-03-26,7,Calderdale
-2020-03-26,5,North Lincolnshire
-2020-03-26,4,Darlington
+2020-03-26,7,Isle of Wight
+2020-03-26,6,Blackburn with Darwen
+2020-03-26,6,North Lincolnshire
+2020-03-26,5,Darlington
+2020-03-26,5,North East Lincolnshire
+2020-03-26,4,"Kingston upon Hull, City of"
 2020-03-26,3,Hartlepool
-2020-03-26,3,Blackburn with Darwen
-2020-03-26,3,North East Lincolnshire
 2020-03-26,3,Bracknell Forest
-2020-03-26,3,Isle of Wight
-2020-03-26,2,"Kingston upon Hull, City of"

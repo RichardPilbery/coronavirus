@@ -30,7 +30,7 @@ text2 <- lapply(text, function(x) {
 })
 
 text3 <- unlist(text2)
-start_df <- data.frame(report_date = text3[1], tests = text3[2], negative=text3[3], positive=text3[4], deaths = str_replace(text3[5], ",", ""), stringsAsFactors = F)
+start_df <- data.frame(report_date = text3[1], tests = text3[2], negative=text3[3], positive=text3[4], deaths = str_replace(text3[7], ",", ""), stringsAsFactors = F)
 
 #tab <- h %>% html_nodes("table")
 #tab <- tab[[1]] %>% html_table

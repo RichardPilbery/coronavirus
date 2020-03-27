@@ -53,9 +53,9 @@ process_covid <- function(textfield, thedate) {
 }
 
 
-# today <- lubridate::dmy(str_extract(text2[3], "\\d{1,2}(rd|th|nd|st){1}\\s(January|February|March|April|May|June|July|August|September|October|November|December)\\s2020"))
+today <- lubridate::dmy(str_extract(text2[3], "\\d{1,2}(rd|th|nd|st){1}\\s(January|February|March|April|May|June|July|August|September|October|November|December)\\s2020"))
 
-today <- lubridate::today()
+#today <- lubridate::today()
 
 # Calculate UTLA data
 
