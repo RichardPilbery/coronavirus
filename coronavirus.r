@@ -20,9 +20,9 @@ text2 <- lapply(text, function(x) {
     num_row <- the_numbers[[1]][,1]
     length_the_number = length(num_row)
     dead <- str_replace(num_row[8], ",", "")
-    positive <- str_replace(num_row[7], ",", "")
-    negative <- str_replace(num_row[6], ",", "")
+    positive <- str_replace(num_row[6], ",", "")
     num_tests <- str_replace(num_row[5], ",", "")
+    negative <- as.numeric(num_tests) - as.numeric(positive)
     
     new_row <- c(the_date, num_tests, negative, positive, dead)
     return(new_row)

@@ -12,8 +12,11 @@ ggplot(df, aes(x=rep_date)) +
   geom_line(aes(y=positive), stat="identity")
 
 ggplot(df, aes(x=rep_date)) +
-  geom_point(aes(y=deaths), stat="identity") + 
-  geom_line(aes(y=deaths), stat="identity")
+  geom_point(aes(y=deaths), stat="identity", color='red') + 
+  geom_line(aes(y=deaths), stat="identity", color='red') +
+  geom_point(aes(y=positive), stat="identity") + 
+  geom_line(aes(y=positive), stat="identity") +
+  scale_y_continuous( trans = scales::log_trans())
 
 
 ggplot(df, aes(x=rep_date)) +
