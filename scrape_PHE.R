@@ -77,7 +77,7 @@ df <- tibble(
   `Daily Confirmed Cases` = as.numeric(str_extract_all(gsub(",","",text[5]), "\\d+") %>% unlist())[1],
   #`Patients recovered` = NA, # as.numeric(str_extract_all(text[6], "\\d+") %>% unlist() %>% paste(sep="", collapse="")),
   `UK Daily Death` = as.numeric(str_extract_all(gsub(",","",text[5]), "\\d+") %>% unlist())[2],
-  `Total UK deaths` = as.numeric(str_extract_all(gsub(",","",text[4]), "\\d+") %>% unlist())[1],
+  `Total UK deaths` = as.numeric(str_extract_all(gsub(",","",text[4]), "\\d+") %>% unlist())[2],
   `Total England cases` = as.numeric(str_extract_all(gsub(",","",text[6]), "\\d+") %>% unlist())[1],
   `Total Scotland cases` = as.numeric(str_extract_all(gsub(",","",text[7]), "\\d+") %>% unlist())[1],
   `Total Wales cases` = as.numeric(str_extract_all(gsub(",","",text[8]), "\\d+") %>% unlist())[1],

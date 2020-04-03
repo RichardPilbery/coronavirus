@@ -8,6 +8,8 @@ df <- read_csv('coronavirus-data.csv') %>%
   )  
 
 ggplot(df, aes(x=rep_date)) +
+  geom_point(aes(y=deaths), stat="identity", color='red') + 
+  geom_line(aes(y=deaths), stat="identity", color='red') +
   geom_point(aes(y=positive), stat="identity") + 
   geom_line(aes(y=positive), stat="identity")
 
