@@ -1,5 +1,6 @@
 library(tidyverse)
 library(lubridate)
+library(plotly)
 
 df <- read_csv('coronavirus-data.csv') %>%
   select(report_date, positive, deaths) %>%
